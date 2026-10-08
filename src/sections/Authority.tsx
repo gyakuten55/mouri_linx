@@ -86,7 +86,7 @@ export function Authority() {
               <summary>
                 <span className="mono">0{index + 1}</span>
                 <span className="career-label">{item.label}</span>
-                <h3>{item.title}</h3>
+                <h3>{withMachiRuby(item.title)}</h3>
                 <span className="expand-icon" aria-hidden="true" />
               </summary>
               <div className="career-detail">
@@ -113,5 +113,19 @@ export function Authority() {
         </div>
       </div>
     </section>
+  );
+}
+
+// 「都市」に「まち」のふりがなを付ける
+function withMachiRuby(text: string) {
+  return text.split("都市").flatMap((part, index) =>
+    index === 0
+      ? [part]
+      : [
+          <ruby key={index}>
+            都市<rt>まち</rt>
+          </ruby>,
+          part,
+        ],
   );
 }

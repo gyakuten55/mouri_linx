@@ -39,7 +39,7 @@ export const achievementCards = [
     href: "https://www.meta-osaka.co.jp/",
   },
   {
-    title: "おもろい街、大阪を世界に発信",
+    title: "おもろい都市、大阪を世界に発信",
     label: "Osaka",
     text: "こども万博in EXPO2025を主催し24,000人集客。大阪府のトライアスロン協会の一員として、大阪城トライアスロンで大阪城のお堀を泳ぐ企画の立ち上げに成功。",
     detail: "誰もやったことがないことでも、本気で動けば実現できる。",
