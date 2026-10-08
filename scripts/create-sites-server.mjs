@@ -15,6 +15,8 @@ const contentTypes = {
   ".jpeg": "image/jpeg",
   ".svg": "image/svg+xml",
   ".json": "application/json; charset=utf-8",
+  ".txt": "text/plain; charset=utf-8",
+  ".xml": "application/xml; charset=utf-8",
 };
 
 async function collectAssets(directory) {
@@ -35,7 +37,7 @@ async function collectAssets(directory) {
     const routePath = `/${relative("dist", fullPath).split(sep).join("/")}`;
     const buffer = await readFile(fullPath);
     const extension = extname(entry.name).toLowerCase();
-    const isText = [".html", ".js", ".css", ".svg", ".json"].includes(extension);
+    const isText = [".html", ".js", ".css", ".svg", ".json", ".txt", ".xml"].includes(extension);
 
     assets[routePath] = {
       contentType: contentTypes[extension] ?? "application/octet-stream",
