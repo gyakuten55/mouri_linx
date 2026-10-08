@@ -1057,6 +1057,14 @@ section[tabindex="-1"]:focus {
   opacity: 0;
   visibility: hidden;
 }
+.city-banner.is-topic:after {
+  background: linear-gradient(
+    90deg,
+    rgba(12, 14, 22, 0.72),
+    rgba(12, 14, 22, 0.4) 42%,
+    transparent 72%
+  );
+}
 .city-slide-copy {
   text-shadow: 0 1px 14px rgba(0, 0, 0, 0.45);
 }

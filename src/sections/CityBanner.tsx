@@ -8,12 +8,21 @@ const HALLOWEEN_PRESS_URL =
 const slides = [
   {
     id: "halloween",
-    image: {
-      src: "/assets/halloween/namba-stairs-wide.jpg",
-      alt: "目玉のアートでラッピングされた難波駅の大階段",
-      width: 2048,
-      height: 683,
-    },
+    // 表示のたびにどちらかをランダムで使う
+    images: [
+      {
+        src: "/assets/halloween/namba-stairs-wide.jpg",
+        alt: "目玉のアートでラッピングされた難波駅の大階段",
+        width: 2048,
+        height: 683,
+      },
+      {
+        src: "/assets/halloween/namba-train-wide.jpg",
+        alt: "目玉のアートでラッピングされた南海電車の車両",
+        width: 2048,
+        height: 683,
+      },
+    ],
     tag: "2026.10.15–18 なんば広場",
     lines: ["まちが、仮装する。", "ハロウィン、始動。"],
     cta: {
@@ -24,12 +33,14 @@ const slides = [
   },
   {
     id: "business",
-    image: {
-      src: "/assets/generated/osaka-panorama.png",
-      alt: "大阪城と公園、ビル群を見渡す大阪の風景を表現した生成ビジュアル",
-      width: 2172,
-      height: 724,
-    },
+    images: [
+      {
+        src: "/assets/generated/osaka-panorama.png",
+        alt: "大阪城と公園、ビル群を見渡す大阪の風景を表現した生成ビジュアル",
+        width: 2172,
+        height: 724,
+      },
+    ],
     tag: null,
     lines: ["大阪のこれからを、", "事業でつくる。"],
     cta: { label: "2社の取り組みを見る", href: "#business", external: false },
@@ -41,6 +52,11 @@ const INTERVAL_MS = 7000;
 export function CityBanner() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [images] = useState(() =>
+    slides.map(
+      (slide) => slide.images[Math.floor(Math.random() * slide.images.length)],
+    ),
+  );
 
   useEffect(() => {
     if (paused) return;
@@ -54,7 +70,7 @@ export function CityBanner() {
 
   return (
     <section
-      className="city-banner"
+      className={"city-banner" + (active === 0 ? " is-topic" : "")}
       aria-label="大阪での取り組み"
       aria-roledescription="カルーセル"
       onMouseEnter={() => setPaused(true)}
@@ -70,10 +86,10 @@ export function CityBanner() {
             (index > 0 ? " is-overlay" : "") +
             (index === active ? " is-active" : "")
           }
-          src={slide.image.src}
-          alt={index === active ? slide.image.alt : ""}
-          width={slide.image.width}
-          height={slide.image.height}
+          src={images[index].src}
+          alt={index === active ? images[index].alt : ""}
+          width={images[index].width}
+          height={images[index].height}
           loading={index === 0 ? "eager" : "lazy"}
         />
       ))}
