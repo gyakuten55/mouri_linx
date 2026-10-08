@@ -1030,3 +1030,89 @@ body {
 section[tabindex="-1"]:focus {
   outline: none;
 }
+
+/* City banner: 旬の話題と事業CTAを切り替えるスライド */
+.city-banner > img.is-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.city-slide-image {
+  transition: opacity 0.9s ease;
+}
+.city-slide-image.is-overlay:not(.is-active) {
+  opacity: 0;
+}
+.city-caption {
+  display: grid;
+  align-items: center;
+}
+.city-slide-copy {
+  grid-area: 1 / 1;
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s;
+}
+.city-slide-copy:not(.is-active) {
+  opacity: 0;
+  visibility: hidden;
+}
+.city-slide-copy {
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.45);
+}
+.city-tag {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  opacity: 0.85;
+}
+.city-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  display: flex;
+  gap: 8px;
+  color: #fff;
+  z-index: 2;
+}
+.city-dots button {
+  position: relative;
+  width: 28px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+.city-dots button:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+.city-dots button.is-active:before {
+  opacity: 1;
+}
+@media (max-width: 960px) {
+  .city-dots {
+    position: static;
+    margin-top: -16px;
+    padding-bottom: 16px;
+    color: var(--ink);
+  }
+  .city-slide-copy {
+    text-shadow: none;
+  }
+  .city-tag {
+    margin-bottom: 4px;
+    font-size: 10px;
+  }
+}

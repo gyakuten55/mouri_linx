@@ -103,7 +103,8 @@ export function Authority() {
                         : undefined
                     }
                   >
-                    {item.label === "Books" ? "著書を見る" : "関連サイトを見る"}
+                    {item.linkLabel ??
+                      (item.label === "Books" ? "著書を見る" : "関連サイトを見る")}
                     <Arrow diagonal />
                   </a>
                 ) : null}

@@ -51,6 +51,7 @@ export const achievementCards = [
     detail:
       "2021年、コロナ禍の大阪を盛り上げたいと個人で立ち上げたハロウィンイベントから続く想いが、将来1,000万人規模の世界最大のハロウィンを目指すプロジェクトとして始動。",
     href: "https://prtimes.jp/main/html/rd/p/000000102.000131350.html",
+    linkLabel: "プレスリリースを見る",
   },
 ];
 
