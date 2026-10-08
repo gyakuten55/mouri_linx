@@ -51,7 +51,9 @@ export function Contact() {
             <span>毛利 英昭</span>
             <small>HIDEAKI MOURI</small>
           </a>
-          <p>大阪を、世界一おもろい街にする。</p>
+          <p>
+            大阪を、世界一おもろい<ruby>都市<rt>まち</rt></ruby>にする。
+          </p>
           <a href="#top" className="back-top mono">
             ページの先頭へ <span>↑</span>
           </a>

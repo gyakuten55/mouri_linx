@@ -18,7 +18,9 @@ export function Hero() {
           </p>
           <h1 id="hero-title">
             <span>大阪を、世界一</span>
-            <span>おもろい街にする。</span>
+            <span>
+              おもろい<ruby>都市<rt>まち</rt></ruby>にする。
+            </span>
           </h1>
           <p className="cover-description">
             不動産とテクノロジーを通じて、
