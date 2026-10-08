@@ -44,6 +44,14 @@ export const achievementCards = [
     text: "こども万博in EXPO2025を主催し24,000人集客。大阪府のトライアスロン協会の一員として、大阪城トライアスロンで大阪城のお堀を泳ぐ企画の立ち上げに成功。",
     detail: "誰もやったことがないことでも、本気で動けば実現できる。",
   },
+  {
+    title: "CHIMNEY TOWN HALLOWEEN 2026 in NAMBAを共催",
+    label: "Halloween",
+    text: "NANKAI主催、キングコング西野亮廣氏率いるCHIMNEY TOWNとMeta Osakaの共催で、2026年10月15日〜18日になんば広場にて開催。「まちが、仮装する。」をコンセプトに、約5,000個の提灯と“目玉”で彩る体験型アート空間やXR体験を展開し、Meta Osakaが企画・運営を担う。",
+    detail:
+      "2021年、コロナ禍の大阪を盛り上げたいと個人で立ち上げたハロウィンイベントから続く想いが、将来1,000万人規模の世界最大のハロウィンを目指すプロジェクトとして始動。",
+    href: "https://prtimes.jp/main/html/rd/p/000000102.000131350.html",
+  },
 ];
 
 export const books = [
